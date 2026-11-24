@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hugues Akpado TCHEDE | Developpeur back-end</title>
+<title>Hugues Akpado TCHEDE | Développeur Web</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
@@ -636,6 +636,8 @@ Passionné par la création d'applications complètes et performantes.
 <div class="section-tag">— Mes outils</div>
 <h2 class="section-title">COMPÉTENCES</h2>
 <div class="skills-grid">
+<div class="skill-chip"><i class="fab fa-php"></i><span>PHP</span></div>.
+<div class="skill-chip"><i class="fab fa-laravel"></i><span>Laravel</span></div>
 <div class="skill-chip"><i class="fab fa-react"></i><span>React.js</span></div>
 <div class="skill-chip"><i class="fab fa-node-js"></i><span>Node.js</span></div>
 <div class="skill-chip"><i class="fas fa-code"></i><span>TypeScript</span></div>
@@ -656,6 +658,41 @@ Passionné par la création d'applications complètes et performantes.
 <div class="section-inner">
 <div class="section-tag">— Mon travail</div>
 <h2 class="section-title">MES PROJETS</h2>
+
+<div class="project-featured" style="margin-bottom:60px">
+<div class="project-img" style="padding:0; position:relative;">
+<div class="carousel" id="carousel2">
+<div class="carousel-track">
+<div class="carousel-slide"><img src="ecole-dashboard_1.jpg" alt="Tableau de bord 1"></div>
+<div class="carousel-slide"><img src="ecole-dashboard_2.jpg" alt="Tableau de bord 2" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-inscription_1.jpg" alt="Inscription 1" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-inscription_2.jpg" alt="Inscription 2" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-classes_1.jpg" alt="Classes" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-matieres_1.jpg" alt="Matières 1" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-matieres_2.jpg" alt="Matières 2" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-paiements_1.jpg" alt="Paiements 1" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-paiements_2.jpg" alt="Paiements 2" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-recus_1.jpg" alt="Reçus 1" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-recus_2.jpg" alt="Reçus 2" loading="lazy"></div>
+<div class="carousel-slide"><img src="ecole-recus_3.jpg" alt="Reçus 3" loading="lazy"></div>
+</div>
+<button class="carousel-btn prev" onclick="moveCarousel('carousel2', -1)"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-btn next" onclick="moveCarousel('carousel2', 1)"><i class="fas fa-chevron-right"></i></button>
+<div class="carousel-dots"></div>
+</div>
+</div>
+<div class="project-info">
+<div class="project-label">✦ Projet en cours • 2026</div>
+<h3>Gestion scolaire : École Dieu le Père</h3>
+<p>Application web de gestion d'un établissement scolaire : inscriptions, classes, matières, paiements et génération de reçus. L'accès est contrôlé selon 5 rôles d'utilisateurs.</p>
+<div class="tech-tags">
+<span class="tech-tag">Laravel</span>
+<span class="tech-tag">PHP</span>
+<span class="tech-tag">MySQL</span>
+</div>
+</div>
+</div>
+
 <div class="project-featured">
 <div class="project-img" style="padding:0; position:relative;">
 <div class="carousel" id="carousel1">
@@ -697,6 +734,7 @@ Voir le projet <i class="fas fa-arrow-right"></i>
 <p>Vous avez un projet en tête ou vous souhaitez collaborer ? N'hésitez pas à me contacter, je serai ravi d'échanger avec vous.</p>
 <div class="contact-links">
 <a href="mailto:huguetchede7@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
+
 <a href="https://wa.me/22991757376" target="_blank" class="contact-link">
 <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
@@ -736,7 +774,7 @@ a.style.color = a.getAttribute('href') === '#' + current ? '#c084fc' : '';
 });
 });
 
-function initCarousel(id) {
+function initCarousel(id, autoplay = true) {
 const carousel = document.getElementById(id);
 const track = carousel.querySelector('.carousel-track');
 const slides = carousel.querySelectorAll('.carousel-slide');
@@ -754,7 +792,7 @@ dotsContainer.appendChild(dot);
 carousel.dataset.index = 0;
 
 // Auto-play optionnel
-setInterval(() => moveCarousel(id, 1), 4000);
+if (autoplay) setInterval(() => moveCarousel(id, 1), 4000);
 }
 
 function goToSlide(id, i) {
@@ -776,6 +814,7 @@ goToSlide(id, index);
 }
 
 initCarousel('carousel1');
+initCarousel('carousel2', false);
 </script>
 
 </body>
